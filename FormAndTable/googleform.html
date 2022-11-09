@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Form</title>
+</head>
+
+<body>
+    <style>
+        .sform{
+            width: 50%;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 250px;
+            text-align: center;
+        }
+
+        input{
+            font-size: 15px;
+            padding: 8px 13px ;
+            border: none;
+        }
+        input[type=search]{
+            background-color: #EEEEEE;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+        input[type=submit]{
+            background-color: rgb(0,153,255);
+            margin-left: 1px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+    </style>
+    <div class="container" >
+        <div class="sform">
+            <form action="https://www.google.com.vn/search" method="get">
+                <input type="search" name="q" placeholder="Search here...">
+                <input type='submit' name="search-button" value="GO">
+            </form>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
