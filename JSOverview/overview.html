@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- show/hide password -->
+    <form action="" onsubmit="showAlert()">
+        <input id='pass' type="password" name="pass" oninvalid="alert('You must type the passsword')" required></input>
+        <input type="submit" value="Submit"></input>
+    </form>
+    <input type="checkbox" onchange="showPass()" id="btn">Show password</input>
+
+    <!-- avatar -->
+    <br>
+    <button onclick="showAvatar()">Avatar</button><br>
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/1126px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg"
+        alt="" width='100px' style="display: none;" class="ava">
+
+    <!-- click me -->
+    <button type="button" onclick="showMessage()">click me</button>
+
+    <script>
+        function showPass() {
+            if (document.getElementById('pass').type == 'password') {
+                document.getElementById('pass').type = 'text';
+                document.getElementById('btn').innerHTML = 'Hide password';
+            } else {
+                document.getElementById('pass').type = 'password';
+                document.getElementById('btn').innerHTML = 'Show password';
+            }
+        }
+        function showAvatar() {
+            if (document.getElementsByClassName('ava')[0].style.display == 'none') {
+                document.getElementsByClassName('ava')[0].style.display = 'block';
+            }
+            else {
+                document.getElementsByClassName('ava')[0].style.display = 'none';
+            }
+        }
+
+        function showMessage() {
+            alert('hi');
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+</head>
+<body>
+    <button type="button" onclick="showAlert()">Click me to show Alert</button><br>
+    <br>
+    <button type="button" onclick="writeAlert()">Click me to write Hi</button><br>
+    <br>
+    <button type="button" onclick="inConsole()">Click me to show in console log </button><br>
+    <br>
+    <button type="button" onclick="changeName()" id="btn">Click me to change button name </button><br>
+
+    <script>
+        function showAlert(){
+            alert("Hi");
+        }
+        function writeAlert(){
+            document.write('hi');
+        }
+        function inConsole(){
+            console.log('Hi');
+        }
+        function changeName(){
+            document.getElementById('btn').innerHTML = 'Hi';
+        }
+    </script>
+</body>
+</html>
