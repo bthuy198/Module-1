@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+
+<body>
+    <div class="container">
+        
+        <div class="form-signin">
+            <div class="h3-p"><h3><b>Đăng kí</b> </h3></div>
+            <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+                <label for="uname"><b>Họ và tên</b></label>
+                <input type="text" name="uname" required>
+
+                <label for="mail"><b>Email</b></label>
+                <input type="email" name="mail" required>
+                <label for="phone"><b>Số điện thoại</b></label>
+                <input type="number" name="phone" required>
+                <label><b>Giới tính</b><br>
+                    <input type="radio" checked="checked" name="gender"> Nam
+                    <input type="radio" checked="checked" name="gender"> Nữ
+                </label>
+                <button type="submit">Đăng kí</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
