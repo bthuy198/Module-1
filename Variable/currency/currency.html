@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="currency.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <script src="currency.js"></script>
+    <div class="converter">
+        <div class="converter-form">
+            <h3>Exchange Converter</h3>
+            <form action="" name="exchange-form">
+                <div>
+                    <label for="number">Type amount</label><br>
+                    <input type="number" id="number">
+                </div>
+                <div>
+                    <label for="currency-from">Select Currency</label><br>
+                    <select name="currency-from" id="currency-from">
+                        <option value="USD" selected>USD</option>
+                        <option value="VNĐ">VNĐ</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="currency-to">Select Currency</label><br>
+                    <select name="currency-to" id="currency-to">
+                        <option value="USD" selected>USD</option>
+                        <option value="VNĐ">VNĐ</option>
+                    </select>
+                </div>
+                <div class="btn">
+                    <button type="submit" form="exchange-form"
+                        onclick='convertCurr(document.getElementById("number").value)'>CALCULATE</button>
+                </div>
+                <div class="result-div">
+                    <span id="result">0</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
