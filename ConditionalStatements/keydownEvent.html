@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="doReady()">
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png"
+        style="position:absolute;left:0; top:0;" height="100" width="80">
+    <script>
+        // nút lên
+        function upArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        //nút xuống
+        function downArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        // nút trái 
+        function leftArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+
+        // nút phải
+        function rightArrowPressed() {
+            let element = document.getElementById('nobita');
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+
+        function moveSelection(ev) {
+            switch (ev.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+
+            }
+        }
+
+        // sự kiện keydown xảy ra khi bạn nhấn xuống (press down) một phím (key)
+        function doReady(){
+            window.addEventListener('keydown', moveSelection);
+        }
+
+    </script>
+</body>
+
+</html>
