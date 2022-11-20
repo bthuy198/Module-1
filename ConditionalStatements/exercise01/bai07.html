@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:
+        Phí thuê bao bắt buộc là 25 nghìn.600 đồng cho mỗi phút gọi của 50 phút đầu tiên.
+        400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+        200 đồng cho bất kỳ phút gọi nào sau 200 phút đầu tiên. -->
+    <div>
+        <label for="minutes">Số phút sử dụng </label><br>
+        <input type="number" id="minutes"><br>
+        <br>
+        <button type="submit" onclick="check()">Kiểm tra</button><br>
+        <br>
+        <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        function check() {
+            let inputM = document.getElementById('minutes').value;
+            let minute = parseFloat(inputM);
+            let fixed_cost = 25000;
+            let money = 0;
+            if (minute <= 50) {
+                money = fixed_cost + 600 * minute;
+            } else if (minute <= 200) {
+                money = fixed_cost + 600 * 50 + 400 * (minute - 50);
+            } else {
+                money = fixed_cost + 600 * 50 + 400 * 150 + 200 * (minute - 200);
+            }
+
+            document.getElementById('result').innerHTML = `Bạn đã gọi ${inputM} phút </br>
+            Cước điện thoại cần phải trả: ${money} VNĐ`;
+        }
+    </script>
+</body>
+
+</html>

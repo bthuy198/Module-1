@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="number_a">Nhập điểm bài kiểm tra</label><br>
+        <input type="number" id="number_a"><br>
+        <br>
+        <label for="number_b">Nhập điểm bài thi giữa kì</label><br>
+        <input type="number" id="number_b"><br>
+        <br>
+        <label for="number_c">Nhập điểm bài thi cuối kì</label><br>
+        <input type="number" id="number_c"><br>
+        <br>
+        <button type="submit" onclick="check()">Kiểm tra thứ hạng</button><br>
+        <br>
+        Thứ hạng: <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        // Điểm trung bình >= 9.0 là hạng A.
+        // Điểm trung bình >=7.0 và < 9.0 là hạng B
+        // Điểm trung bình >=5.0 và < 7.0 là hạng C
+        // Điểm trung bình <5.0 là hạng F
+        function check() {
+            let input_a = document.getElementById('number_a').value;
+            let input_b = document.getElementById('number_b').value;
+            let input_c = document.getElementById('number_c').value;
+            let diemKiemTra = parseFloat(input_a);
+            let giuaKi = parseFloat(input_b);
+            let cuoiKi = parseFloat(input_c);
+            let diemTB = (diemKiemTra + giuaKi + cuoiKi) / 3;
+            let result = '';
+            if (diemTB < 5) {
+                result = 'F';
+            } else if (diemTB < 7) {
+                result = 'C';
+            } else if (diemTB < 9) {
+                result = 'B';
+            } else {
+                result = 'A';
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

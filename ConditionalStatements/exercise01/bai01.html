@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <div>
+            <label for="number_a">Nhập a</label><br>
+            <input type="number" id="number_a"><br>
+            <br>
+            <label for="number_b">Nhập b</label><br>
+            <input type="number" id="number_b"><br>
+            <br>
+            <button type="submit" onclick="check()">Kiểm tra</button><br>
+            <br>
+            <span id="result"></span>
+            <br>
+        
+    </div>
+    <script>
+        //Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không
+        function check() {
+            let input_a = document.getElementById('number_a').value;
+            let input_b = document.getElementById('number_b').value;
+            let a = parseFloat(input_a);
+            let b = parseFloat(input_b);
+            if (a % b === 0) {
+                document.getElementById('result').innerHTML = 'a chia hết cho b';
+            } else {
+                document.getElementById('result').innerHTML = 'a không chia hết cho b';
+            }
+        }
+    </script>
+</body>
+
+</html>

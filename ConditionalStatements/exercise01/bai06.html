@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Cửa hàng của bạn nhận gửi bán sản phẩm cho một công ty khác và sau mỗi tháng bạn cần tính toán số tiền hoa hồng bạn nhận được. 
+        Với mức hoa hồng theo doanh số bán hàng như sau:
+        5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.
+        10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.
+        20 % nếu tổng doanh số là lớn hơn 300 triệu. -->
+    <div>
+        <label for="revenue">Nhập doanh thu (trăm triệu)</label><br>
+        <input type="number" id="revenue"><br>
+        <br>
+        <button type="submit" onclick="check()">Kiểm tra</button><br>
+        <br>
+        <span id="result"></span>
+    </div>
+    <script>
+        function check() {
+            let inputRevenue = document.getElementById('revenue').value;
+            let revenue = parseFloat(inputRevenue);
+            let money = 0;
+            if (revenue <= 100) {
+                money = revenue * 0.05;
+            } else if (revenue <= 300) {
+                money = revenue * 0.1;
+            } else {
+                money = revenue * 0.2;
+            }
+            document.getElementById('result').innerHTML = `Hoa hồng nhận được: ${money} triệu`;
+        }
+    </script>
+</body>
+
+</html>
