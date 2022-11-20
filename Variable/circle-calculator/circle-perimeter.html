@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Perimeter Calculator</title>
+    <link rel="stylesheet" href="circle-area.css">
+</head>
+
+<body>
+    <div class="main-form">
+        <h3>Circle Perimeter Calculator</h3>
+        <form action="" class="circle" name="circle">
+            <input type="number" placeholder="Enter radius" id="radius">
+            <button type="submit" form="circle" onclick="perimeter()">CALCULATE</button>
+            <div class="result-div">
+                <span id="result"></span>
+            </div>
+        </form>
+    </div>
+    <script>
+        function perimeter() {
+            let inputR = document.getElementById('radius').value;
+            let radius = parseFloat(inputR);
+            let result = 2 * radius * 3.14;
+            document.getElementById('result').innerHTML = result;
+        }
+
+    </script>
+</body>
+
+</html>

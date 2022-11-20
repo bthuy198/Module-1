@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm trung bình</title>
+</head>
+
+<body>
+    <h3>Chương trình tính điểm trung bình</h3>
+    <script>
+        inputPhysicsMark = prompt("Nhập điểm Vật Lí");
+        inputBioMark = prompt("Nhập điểm Sinh học");
+        inputChemistryMark = prompt("Nhập điểm Hóa học");
+        let physicsMark = parseInt(inputPhysicsMark);
+        let bioMark = parseInt(inputBioMark);
+        let chemistryMark = parseInt(inputChemistryMark);
+        let dTB = (physicsMark + bioMark + chemistryMark) / 3;
+        document.write("Điểm trung bình là: " + dTB);
+
+    </script>
+</body>
+
+</html>
