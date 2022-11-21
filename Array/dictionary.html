@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển Anh - Việt</title>
+</head>
+
+<body>
+    <h3>Từ điển Anh - Việt</h3>
+    <input type="text" id="word">
+    <input type="button" name="" id="btn" value="Dịch" onclick="isExist()">
+    <br>
+    <br>
+    <div id="result"></div>
+    <script>
+        //hàm tìm kiếm từ
+        function isExist() {
+            let result = '';
+            let eng = ['apple', 'mango', 'banana', 'melon'];
+            let vie = ['táo', 'xoài', 'chuối', 'dưa'];
+            let word = document.getElementById('word').value;
+            for (let i = 0; i < eng.length; i++) {
+                if (word == eng[i]) {
+                    result = vie[i];
+                    document.getElementById('result').innerHTML = `Result = ${result}`;
+                }
+            }
+            if (result == '') {
+                document.getElementById('result').innerHTML = 'not found';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
