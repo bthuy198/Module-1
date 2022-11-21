@@ -6,7 +6,7 @@ let index = 0;
 for(let i = 0; i < arr.length; i++){
     if(arr[i] > max){
         max = arr[i];
-        index = i;
+        index = i + 1;
     }
 }
 console.log(`Giá trị lớn nhất của mảng là ${max} ở vị trí ${index} `);
