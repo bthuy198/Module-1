@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Management</title>
+    <link rel="stylesheet" href="manager.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="add-div">
+            <h3>Add New Product</h3>
+            <input type="text" class="form-control" id="productName" placeholder="New Product">
+            <button class="btn btn-success" onclick="add()">Add</button>
+        </div>
+        <div class="display-form">
+            <h3>Display All Product</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th colspan="2">Product Name</th>
+                        <th>9 products</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="manager.js"></script>
+</body>
+
+</html>
