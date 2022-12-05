@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+div{
+    text-align: center;
+}
+div>h3{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 15px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.x_cell{
+    /* background-color: red; */
+    color: red;
+}
+.o_cell{
+    /* background-color: green; */
+    color: black;
+}
