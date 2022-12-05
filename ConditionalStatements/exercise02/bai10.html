@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Chương trình tính giá điện</h3>
+    <label for="old">Chỉ số cũ (kWh) </label><br>
+    <input type="number" id="old"><br>
+    <br>
+    <label for="new">Chỉ số mới (kWh) </label><br>
+    <input type="number" id="new"><br>
+    <br>
+    <button type="submit" onclick="check()">Tính</button><br>
+    <br>
+    <span id="result"></span>
+    <br>
+    <script>
+        // Viết chương trình tính tiền điện với chỉ số mới và chỉ số cũ Được nhập vào từ bàn phím.
+        // In ra màn hình chỉ số cũ, chỉ số mới và số tiền phải trả.
+        // Biết rằng 100 kWh đầu giá 1000, 
+        // từ kWh 101 – 150 giá 1200, 
+        // từ kWh 151 – 200 giá 2000, 
+        // từ 201 trở lên giá 2500.
+        function check() {
+            let old_N = parseInt(document.getElementById('old').value);
+            let new_N = parseInt(document.getElementById('new').value);
+            let num = new_N - old_N;
+            let money = 0;
+            if (num <= 100) {
+                money = num * 1000;
+            } else if (num <= 150) {
+                money = 100 * 1000 + (num - 100) * 1200;
+            } else if (num <= 200) {
+                money = 100 * 1000 + 50 * 1200 + (num - 150) * 2000;
+            } else if (num > 200) {
+                money = 100 * 1000 + 50 * 1200 + 50 * 2000 + (num - 200) * 2500;
+            }
+            document.getElementById('result').innerHTML = money + ' VNĐ';
+        }
+    </script>
+</body>
+
+</html>

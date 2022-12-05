@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h3>Phương trình bậc nhất ax + b = 0</h3>
+        <label for="a">Nhập hệ số a</label><br>
+        <input type="number" id="a"><br>
+        <br>
+        <label for="b">Nhập hệ số b</label><br>
+        <input type="number" id="b"><br>
+        <br>
+        <button type="submit" onclick="check()">Tính</button><br>
+        <br>
+        <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        function check() {
+            let inputA = document.getElementById('a').value;
+            let inputB = document.getElementById('b').value;
+            let a = parseFloat(inputA);
+            let b = parseFloat(inputB);
+            let result = 0;
+            if (a == 0) {
+                document.getElementById('result').innerHTML = "Phương trình vô nghiệm";
+            } else {
+                result = -(b) / a;
+                document.getElementById('result').innerHTML = `Phương trình có nghiệm là ${result}`
+            }
+        }
+    </script>
+</body>
+
+</html>

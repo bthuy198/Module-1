@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h3>Thuế thu nhập cá nhân</h3>
+        <label for="salary">Số tiền lương (triệu đồng) </label><br>
+        <input type="number" id="salary"><br>
+        <br>
+        <button type="submit" onclick="check()">Tính</button><br>
+        <br>
+        <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        //tính thuế thu nhập và lương ròng (số tiền lương thực sự mà nhân viên đó nhận được). 
+        // Với các thông số sau (mình chỉ đưa ra các con số này cho dễ tính toán):
+        // 30% thuế thu nhập nếu lương là 15 triệu
+        // 20% thuế thu nhập nếu lương từ 7 đến 15 triệu
+        // 10% thuế thu nhập nếu lương dưới 7 triệu
+        function check() {
+            let income = 0;
+            let salary = parseFloat(document.getElementById('salary').value);
+            let result = 0;
+            if (salary < 7) {
+                income = salary * 0.1;
+                result = salary - income;
+            }
+            else if (salary < 15) {
+                income = salary * 0.2;
+                result = salary - income;
+            } else {
+                income = salary * 0.3;
+                result = salary - income;
+            }
+            
+            document.getElementById('result').innerHTML = (`Số tiền thuế bạn phải đóng: ${income.toFixed(2)} triệu đồng
+            Số tiền lương bạn nhận được là: ${result.toFixed(2)} triệu đồng`);
+        }
+    </script>
+</body>
+
+</html>

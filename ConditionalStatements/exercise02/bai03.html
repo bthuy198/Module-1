@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Diện tích hình vuông</h3>
+        <label for="width">Nhập cạnh a (cm)</label><br>
+        <input type="number" id="width"><br>
+        <br>
+        <button type="submit" onclick="check()">Tính</button><br>
+        <br>
+        <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        function check() {
+            let inputA = document.getElementById('width').value;
+            let a = parseFloat(inputA);
+            let area = 0;
+            if (a <= 0) {
+                document.getElementById('result').innerHTML = "Không hợp lệ. Vui lòng nhập lại";
+            } else {
+                area = a * a;
+                document.getElementById('result').innerHTML = `Hình vuông cạnh ${a} cm có diện tích là ${area} cm<sup>2</sup>`
+            }
+        }
+    </script>
+</body>
+</html>

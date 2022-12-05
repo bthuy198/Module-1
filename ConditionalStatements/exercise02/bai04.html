@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Diện tích hình chữ nhật</h3>
+        <label for="width">Nhập chiều rộng (cm)</label><br>
+        <input type="number" id="width"><br>
+        <br>
+        <label for="height">Nhập chiều cao (cm)</label><br>
+        <input type="number" id="height"><br>
+        <br>
+        <button type="submit" onclick="check()">Tính</button><br>
+        <br>
+        <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        function check() {
+            let inputA = document.getElementById('width').value;
+            let inputB = document.getElementById('height').value;
+            let width = parseFloat(inputA);
+            let height = parseFloat(inputB);
+            let area = 0;
+            if (width <= 0 || height <= 0) {
+                document.getElementById('result').innerHTML = "Không hợp lệ. Vui lòng nhập lại";
+            } else {
+                area = width * height;
+                document.getElementById('result').innerHTML = `Hình chữ nhật có 2 cạnh ${width} cm và ${height} cm có diện tích là ${area} cm<sup>2</sup>`
+            }
+        }
+    </script>
+</body>
+</html>

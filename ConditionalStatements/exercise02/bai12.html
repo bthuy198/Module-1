@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="money">Số tiền vay (triệu đồng</label></td>
+                    <td><input type="number" id="money"></td>
+                </tr>
+                <tr>
+                    <td><label for="month">Số tháng vay</label></td>
+                    <td><input type="number" id="month"></td>
+                </tr>
+                <tr>
+                    <td>Lãi suất/ tháng</td>
+                    <td>4%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="Tính" onclick="calcM()"></td>
+                </tr>
+                <tr>
+                    <td>Số tiền phải trả</td>
+                    <td id="result"></td>
+                </tr>
+            </tbody>
+        </table>
+        <label for=""></label>
+    </div>
+    <script>
+        // Số_tiền_lãi = Số_tiền_gửi *  tỉ_lệ_lãi_suất (% năm) / 12 * số_tháng_gửi
+        function calcM(){
+            let money = Number(document.getElementById("money").value);
+            let months = Number(document.getElementById("month").value);
+            let interest = 4/100;
+            let total_interest = 0;
+            total_interest = money * (4/100) * months;
+            let result = money + total_interest;
+            document.getElementById('result').innerHTML = result.toFixed(2) + ' triệu đồng';
+        }
+    </script>
+</body>
+</html>

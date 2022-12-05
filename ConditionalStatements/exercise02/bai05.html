@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h3>Diện tích hình tam giác vuông</h3>
+        <label for="a">Nhập cạnh bên 1 (cm)</label><br>
+        <input type="number" id="a"><br>
+        <br>
+        <label for="b">Nhập cạnh bên 2 (cm)</label><br>
+        <input type="number" id="b"><br>
+        <br>
+        <button type="submit" onclick="check()">Tính</button><br>
+        <br>
+        <span id="result"></span>
+        <br>
+    </div>
+    <script>
+        function check() {
+            let inputA = document.getElementById('a').value;
+            let inputB = document.getElementById('b').value;
+            let a = parseFloat(inputA);
+            let b = parseFloat(inputB);
+            let area = 0;
+            if (a <= 0 || b <= 0) {
+                document.getElementById('result').innerHTML = "Không hợp lệ. Vui lòng nhập lại";
+            } else {
+                area = (a * b) / 2;
+                document.getElementById('result').innerHTML = `Hình tam giác vuông có 2 cạnh bên ${a} cm và ${b} cm có diện tích là ${area} cm<sup>2</sup>`
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="data">
+        <select name="units" id="units">
+            <option value="Meter">Meter</option>
+            <option value="Foot">Foot</option>
+        </select>
+        <input type="button" value="CHUYỂN" onclick="change()"><br>
+        <br>
+        <span id="result"></span>
+    </div>
+    <script>
+        function change(){
+            let result = 0;
+            let value = Number(document.getElementById('data').value);
+            if(document.getElementById('units').value == 'Meter'){
+                result = value * 3.2808;
+                document.getElementById('result').innerHTML = result.toFixed(2) + ' ft';
+            }
+            else {
+                result = value / 3.2808;
+                document.getElementById('result').innerHTML = result.toFixed(2) + ' m';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Kiểm tra 3 cạnh của tam giác</h3>
+    <label for="a">Nhập cạnh a (cm)</label><br>
+    <input type="number" id="a"><br>
+    <br>
+    <label for="b">Nhập cạnh b (cm)</label><br>
+    <input type="number" id="b"><br>
+    <br>
+    <label for="b">Nhập cạnh c (cm)</label>
+    <br>
+    <input type="number" id="c"><br>
+    <br>
+    <button type="submit" onclick="check()">Kiểm tra</button><br>
+    <br>
+    <span id="result" onclick="check()"></span>
+    <br>
+    <script>
+        function check() {
+            let inputA = document.getElementById('a').value;
+            let inputB = document.getElementById('b').value;
+            let inputC = document.getElementById('c').value;
+            let a = parseFloat(inputA);
+            let b = parseFloat(inputB);
+            let c = parseFloat(inputC);
+            // if (a === 0 || b === 0 || c === 0) {
+            //     document.getElementById('result').innerHTML = 'Đây không phải là ba cạnh của tam giác'
+            // }
+            if (a > 0 && b > 0 && c > 0) {
+                if (a + b > c && a + c > b && b + c > a) {
+                    document.getElementById('result').innerHTML = 'Đây là ba cạnh của tam giác';
+                } else {
+                    document.getElementById('result').innerHTML = 'Đây không phải là ba cạnh của tam giác';
+                }
+            } else {
+                document.getElementById('result').innerHTML = 'Đây không phải là ba cạnh của tam giác';
+            }
+        }
+    </script>
+</body>
+
+</html>

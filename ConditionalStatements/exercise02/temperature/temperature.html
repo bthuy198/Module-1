@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Temperature</title>
+    <link rel="stylesheet" href="temperature.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="convert-form">
+            <form action="" class="main-form">
+                <div class="degree">
+                    <label for="number">Degrees</label><br>
+                    <input type="number" id="number">
+                </div>
+                <div class="type-div">
+                    <label for="type-select">Type</label><br>
+                    <select name="type" id="type-select">
+                        <option value="Fahrenheit" selected>Fahrenheit</option>
+                        <option value="Celcius">Celcius</option>
+                    </select>
+                </div >
+                <div class='btn'>
+                    <button type="submit" form="main-form"
+                        onclick='convertTemp(document.getElementById("number").value)'>Convert</button>
+                </div><br>
+                <div class="result-div">
+                    Result <br>
+                    <b><span id="result"></span></b>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="temperature.js"></script>
+</body>
+
+</html>

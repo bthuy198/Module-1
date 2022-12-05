@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Phương trình bậc 2: ax<sup>2</sup> + bx + c = 0</h3>
+    <label for="a">Nhập hệ số a</label><br>
+    <input type="number" id="a"><br>
+    <br>
+    <label for="b">Nhập hệ số b</label><br>
+    <input type="number" id="b"><br>
+    <br>
+    <label for="b">Nhập hệ số c</label>
+    <br>
+    <input type="number" id="c"><br>
+    <br>
+    <button type="submit" onclick="check()">Tính</button><br>
+    <br>
+    <span id="result" onclick="check()"></span>
+    <br>
+    <script>
+        function check() {
+            let inputA = document.getElementById('a').value;
+            let inputB = document.getElementById('b').value;
+            let inputC = document.getElementById('c').value;
+            let a = parseFloat(inputA);
+            let b = parseFloat(inputB);
+            let c = parseFloat(inputC);
+            let delta = b * b - 4 * a * c;
+            let x1 = 0;
+            let x2 = 0;
+            if (delta < 0) {
+                document.getElementById('result').innerHTML = 'Phương trình vô nghiệm';
+            } else if (delta === 0) {
+                x1 = (-b) / 2 * a;
+                document.getElementById('result').innerHTML = 'Phương trình có nghiệm kép ' + x1;
+            } else if (delta > 0) {
+                x1 = ((-b) + Math.sqrt(delta).toFixed(2)) / (2 * a);
+                x2 = ((-b) - Math.sqrt(delta).toFixed(2)) / (2 * a);
+                document.getElementById('result').innerHTML = "Phương trình có 2 nghiệm " + "x1 = " + x1 + "," + " x2 = " + x2;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
