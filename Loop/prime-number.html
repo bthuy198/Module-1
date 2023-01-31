@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = 7;
+        let count = 0;
+        let N = 2;
+        let dem = 0;
+
+        while (count < number) {
+            // kiểm tra N là số nguyên tố? 
+            // không là số nguyên tố: tăng N lên 1 đơn vị , kh tăng count 
+            for (let i = 2; i < N - 1; i++) {
+                if (N % i === 0) {
+                    dem++;
+                }
+            }
+            if (dem == 0) {
+                console.log(N);
+                count++;
+                N++;
+            } else {
+                N++;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

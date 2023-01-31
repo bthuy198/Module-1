@@ -22,11 +22,12 @@
             imgObj.style.position = 'relative';
             imgObj.style.left = '0px';
         }
+
         function moveRight() {
             imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
         }
         //Sự kiện onload: khi trình duyệt đã load xong mọi thứ (image, js, css) thì những đoạn code nằm bên trong đó mới được chạy.
-        window.onload = init;
+            window.onload = init();
     </script>
 </body>
 

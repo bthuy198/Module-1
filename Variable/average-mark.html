@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Mark Calculator</title>
+    <link rel="stylesheet" href="average-mark.css">
+</head>
+
+<body>
+    <div class="main-form">
+        <form action="" class="average" name="average">
+            <input type="number" name="physicsMark" id="physicsMark" placeholder="Nhập điểm Lí">
+            <input type="number" name="chemistryMark" id="chemistryMark" placeholder="Nhập điểm Hóa ">
+            <input type="number" name="bioMark" id="bioMark" placeholder="Nhập điểm Sinh"><br>
+            <button type="submit" form="average" onclick="calcAverage()">CALCULATE</button>
+            <div class="result-div">
+                Điểm trung bình<br>
+                <span id="averageMark">0</span><br>
+                Tổng điểm<br>
+                <span id="sumMark">0</span>
+            </div>
+        </form>
+    </div>
+    <script>
+        function calcAverage() {
+            let inputPhysicsMark = document.getElementById('physicsMark').value;
+            let inputChemistryMark = document.getElementById('chemistryMark').value;
+            let inputBioMark = document.getElementById('bioMark').value;
+            let physics = parseFloat(inputPhysicsMark);
+            let chemistry = parseFloat(inputChemistryMark);
+            let bio = parseFloat(inputBioMark);
+            let averageMark = (physics + chemistry + bio) / 3;
+            let sumMark = physics + chemistry + bio;
+            document.getElementById('averageMark').innerHTML = averageMark;
+            document.getElementById('sumMark').innerHTML = sumMark;
+        }
+    </script>
+</body>
+
+</html>

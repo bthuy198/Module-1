@@ -1,14 +1,11 @@
-let number = 20;
+let number = 10;
 let count = 1;
 let N = 3;
 let range = 0;
 let primeArr = [2];
 // function tính range
 function rangeN(num) {
-    if (num % 2 != 0) {
-        num++;
-    }
-    return range = num / 2;
+    return Math.ceil(num / 2);
 }
 // ktra số nguyên tố
 function isPrime(num, range) {
@@ -19,7 +16,7 @@ function isPrime(num, range) {
             count++;
         }
     }
-    if (count == 0) {
+    if (count === 0) {
         return true;
     } else {
         return false;

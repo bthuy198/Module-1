@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="fake()" style="text-align: center;">
+    <h2>Type anything slowly</h2>
+    <textarea name="faketext" id="faketext" cols="30" rows="10"></textarea>
+    <script>
+        let str = document.getElementById('faketext').value;
+        let text = [];
+        text[0] = 'T';
+        text[1] = 'Ô';
+        text[2] = 'I';
+        text[3] = ' ';
+        text[4] = 'L';
+        text[5] = 'À';
+        text[6] = ' ';
+        text[7] = 'M';
+        text[8] = 'Ộ';
+        text[9] = 'T';
+        text[10] = ' ';
+        text[11] = 'Đ';
+        text[12] = 'Ứ';
+        text[13] = 'A';
+        text[14] = ' ';
+        text[15] = 'N';
+        text[16] = 'G';
+        text[17] = 'Ố';
+        text[18] = 'C';
+        text[19] = '!';
+        text[20] = '!';
+        let n = text.length;
+        // hàm delete
+        // hàm fake typing
+        function fake() {
+            //bđ
+            let k = str.length;
+            if(k > 0){
+                for(let i = 0; i < n; i++){
+                    str += text[i];
+                    if(i == 19){
+                        document.getElementById('faketext').value = '';
+                        str = '';
+                    }
+                }
+            }
+            document.getElementById('faketext').value = str;
+            str = '';
+            setTimeout(fake(), 10);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -22,8 +22,9 @@
             let eng = ['apple', 'mango', 'banana', 'melon'];
             let vie = ['táo', 'xoài', 'chuối', 'dưa'];
             let word = document.getElementById('word').value;
+            word = word.toLowerCase();
             for (let i = 0; i < eng.length; i++) {
-                if (word == eng[i]) {
+                if (word.trim() == eng[i]) {
                     result = vie[i];
                     document.getElementById('result').innerHTML = `Result = ${result}`;
                 }

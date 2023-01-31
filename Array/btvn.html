@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- bài tập: thiết kế trang web, có 1 ô input (size) để nhận kích cỡ của mảng. 
+        và 1 textarea để hiển thị các giá trị có trong mảng (mỗi giá trị trên 1 hàng).
+        yêu cầu:
+        nhận giá trị size, 
+        sau đó sinh ra 1 mảng có kích cỡ là size và 
+        mảng này gồm các số được lấy ngẫu nhiên trong [20, 90] -->
+    <input type="number" id="size">
+    <input type="button" value="random" onclick="rndom()">
+    <br>
+    <br>
+    <textarea id="array_value" cols="30" rows="10"></textarea>
+    <script>
+        let size = Number(document.getElementById('size').value);
+        let arr = new Array(size);
+        function rndom() {
+            let min = 20;
+            let max = 90;
+            for (let i = 0; i < size; i++) {
+                arr[i] = Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            document.getElementById('array_value').value += arr[i] + '\n';
+            console.log(arr);
+        }
+    </script>
+</body>
+
+</html>
